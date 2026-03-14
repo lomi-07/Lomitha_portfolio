@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { FadeIn } from '../components/FadeIn';
 
 const projectsData = {
   'capstone-2025': {
@@ -97,6 +98,7 @@ export default function ProjectDetails() {
       </nav>
 
       <main className="flex-grow p-8 md:p-16 lg:p-24 max-w-5xl mx-auto w-full">
+        <FadeIn delay={0} direction="up">
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-6">
             <div className={`inline-block bg-accent-${project.tagColor}-bg text-accent-${project.tagColor}-text px-3 py-1 rounded-full text-[12px] font-medium`}>
@@ -120,12 +122,12 @@ export default function ProjectDetails() {
                   <div className="aspect-video rounded-xl overflow-hidden border border-border-light bg-bg-light shadow-sm">
                     <img 
                       src={`${import.meta.env.BASE_URL}main.jpg`}
-                      alt="Report Analysis" 
+                      alt="Van" 
                       className="w-full h-full object-cover" 
                       referrerPolicy="no-referrer" 
                     />
                   </div>
-                  <p className="text-[13px] text-text-grey font-medium tracking-wide uppercase opacity-70">Report Analysis</p>
+                  <p className="text-[13px] text-text-grey font-medium tracking-wide uppercase opacity-70">Van</p>
                 </div>
                 <div className="space-y-4">
                   <div className="aspect-video rounded-xl overflow-hidden border border-border-light bg-bg-light shadow-sm">
@@ -148,7 +150,7 @@ export default function ProjectDetails() {
                     referrerPolicy="no-referrer" 
                   />
                 </div>
-                <p className="text-[13px] text-text-grey font-medium tracking-wide uppercase opacity-70">Field Sketch & Annotations</p>
+                <p className="text-[13px] text-text-grey font-medium tracking-wide uppercase opacity-70">Sketch</p>
               </div>
             </div>
           )}
@@ -183,6 +185,7 @@ export default function ProjectDetails() {
             </div>
           </div>
         </div>
+        </FadeIn>
       </main>
       
       <footer className="bg-bg-light px-8 py-12 md:px-16 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-8 border-t border-border-light">
