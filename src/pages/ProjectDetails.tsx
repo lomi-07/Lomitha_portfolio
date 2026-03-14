@@ -197,7 +197,7 @@ export default function ProjectDetails() {
             LinkedIn
           </a>
           <a 
-            href="/cv-lomitha.pdf" 
+            href={`${import.meta.env.BASE_URL}cv-lomitha.pdf`} 
             download 
             className="bg-text-dark text-bg-light px-6 py-3 rounded-xl text-[14px] hover:opacity-90 transition-opacity"
           >
