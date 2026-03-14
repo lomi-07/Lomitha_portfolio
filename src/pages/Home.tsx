@@ -13,10 +13,13 @@ export default function Home() {
             Home
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-text-dark transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a href="#projects" className="hover:text-text-dark transition-all duration-300 hover:translate-y-[-2px] relative group">
-            Projects
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-text-dark transition-all duration-300 group-hover:w-full"></span>
-          </a>
+          <button
+  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+  className="hover:text-text-dark transition-all duration-300 hover:translate-y-[-2px] relative group bg-transparent border-none cursor-pointer text-[13px] text-text-grey"
+>
+  Projects
+  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-text-dark transition-all duration-300 group-hover:w-full"></span>
+</button>
         </div>
         <div className="w-[100px] md:hidden"></div>
       </nav>
