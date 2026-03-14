@@ -18,7 +18,7 @@ export default function Home() {
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-text-dark transition-all duration-300 group-hover:w-full"></span>
           </a>
         </div>
-        <div className="w-[100px] md:hidden"></div> {/* Spacer to keep logo centered if needed, or just remove button */}
+        <div className="w-[100px] md:hidden"></div>
       </nav>
 
       <main className="flex-grow">
@@ -26,39 +26,43 @@ export default function Home() {
         <section className="grid grid-cols-1 md:grid-cols-2 border-b border-border-light">
           {/* Left Column */}
           <div className="p-8 md:p-16 lg:p-24 bg-bg-light md:border-r border-border-light flex flex-col justify-center">
-            <div className="inline-flex items-center gap-2 bg-accent-green-bg text-accent-green-text px-3 py-1 rounded-full text-[11px] uppercase tracking-wider font-medium w-fit mb-8">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-green-text"></span>
-              Open to opportunities
-            </div>
-            
-            <h1 className="font-serif text-5xl md:text-[52px] leading-[1.1] tracking-[-1.5px] mb-6">
-              Lomitha<br />
-              <span className="italic text-text-grey">Wickramarachchi</span>
-            </h1>
-            
-            <p className="text-[14px] text-text-grey leading-relaxed max-w-md mb-10">
-              I am a final year Electrical and Electronics Engineering student at Swinburne University. My studies and projects focus on power systems, renewable energy, and the latest in electric vehicle charging technology.
-            </p>
-            
-            <div className="flex flex-wrap items-center gap-4">
-              <a 
-                href="https://www.linkedin.com/in/lomitha" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-text-dark text-bg-light px-6 py-3 rounded-xl text-[14px] hover:opacity-90 transition-opacity"
-              >
-                LinkedIn
-              </a>
-              <button className="bg-bg-light text-text-dark border border-border-light px-6 py-3 rounded-xl text-[14px] hover:opacity-80 transition-opacity">
-                a.lomitha@gmail.com
-              </button>
-            </div>
+            <FadeIn delay={0} direction="up">
+              <div className="inline-flex items-center gap-2 bg-accent-green-bg text-accent-green-text px-3 py-1 rounded-full text-[11px] uppercase tracking-wider font-medium w-fit mb-8">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-green-text"></span>
+                Open to opportunities
+              </div>
+            </FadeIn>
+            <FadeIn delay={100} direction="up">
+              <h1 className="font-serif text-5xl md:text-[52px] leading-[1.1] tracking-[-1.5px] mb-6">
+                Lomitha<br />
+                <span className="italic text-text-grey">Wickramarachchi</span>
+              </h1>
+            </FadeIn>
+            <FadeIn delay={200} direction="up">
+              <p className="text-[14px] text-text-grey leading-relaxed max-w-md mb-10">
+                I am a final year Electrical and Electronics Engineering student at Swinburne University. My studies and projects focus on power systems, renewable energy, and the latest in electric vehicle charging technology.
+              </p>
+            </FadeIn>
+            <FadeIn delay={300} direction="up">
+              <div className="flex flex-wrap items-center gap-4">
+                <a 
+                  href="https://www.linkedin.com/in/lomitha" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-text-dark text-bg-light px-6 py-3 rounded-xl text-[14px] hover:opacity-90 transition-opacity"
+                >
+                  LinkedIn
+                </a>
+                <button className="bg-bg-light text-text-dark border border-border-light px-6 py-3 rounded-xl text-[14px] hover:opacity-80 transition-opacity">
+                  a.lomitha@gmail.com
+                </button>
+              </div>
+            </FadeIn>
           </div>
 
           {/* Right Column */}
           <div className="p-8 md:p-16 lg:p-24 bg-bg-light flex flex-col justify-center gap-6">
             <div className="w-full aspect-[4/3] md:aspect-square lg:aspect-[4/3] bg-bg-light border border-border-light rounded-xl flex items-end relative overflow-hidden group">
-              {/* Using the user's uploaded image */}
               <img 
                 src="https://i.imgur.com/Jli7cGX.jpeg" 
                 alt="Lomitha Wickramarachchi" 
@@ -92,14 +96,17 @@ export default function Home() {
 
         {/* Projects Section */}
         <section id="projects" className="p-8 md:p-16 lg:p-24 border-b border-border-light">
-          <div className="flex items-baseline gap-4 mb-12">
-            <h2 className="font-serif text-[28px]">Projects</h2>
-            <span className="text-text-grey text-[14px]">4 projects</span>
-          </div>
+          <FadeIn delay={0} direction="up">
+            <div className="flex items-baseline gap-4 mb-12">
+              <h2 className="font-serif text-[28px]">Projects</h2>
+              <span className="text-text-grey text-[14px]">4 projects</span>
+            </div>
+          </FadeIn>
 
           <div className="flex flex-col gap-6">
             {/* Featured Project */}
-            <Link to="/project/capstone-2025" className="grid grid-cols-1 lg:grid-cols-2 border border-border-light rounded-xl overflow-hidden hover:bg-black/20 transition-colors group cursor-pointer">
+            <FadeIn delay={0} direction="up">
+            <Link to="/project/capstone-2025" className="grid grid-cols-1 lg:grid-cols-2 border border-border-light rounded-xl overflow-hidden hover:bg-black/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-md group cursor-pointer">
               <div className="p-8 md:p-12 bg-bg-light group-hover:bg-transparent transition-colors flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="bg-accent-amber-bg text-accent-amber-text px-3 py-1 rounded-full text-[12px] font-medium w-fit">
@@ -126,11 +133,13 @@ export default function Home() {
                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
               </div>
             </Link>
+            </FadeIn>
 
             {/* 2-Column Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Project 2: Railway */}
-              <Link to="/project/railway-crossing" className="border border-border-light rounded-xl overflow-hidden bg-bg-light hover:bg-black/20 transition-colors flex flex-col group cursor-pointer">
+              <FadeIn delay={100} direction="up">
+              <Link to="/project/railway-crossing" className="border border-border-light rounded-xl overflow-hidden bg-bg-light hover:bg-black/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col group cursor-pointer h-full">
                 <div className="h-48 overflow-hidden relative border-b border-border-light">
                   <img src={`${import.meta.env.BASE_URL}railway-labview-true-true.jpg`} alt="Railway Crossing" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
@@ -152,9 +161,11 @@ export default function Home() {
                   </div>
                 </div>
               </Link>
+              </FadeIn>
 
               {/* Project 3: MQTT */}
-              <Link to="/project/mqtt-monitoring" className="border border-border-light rounded-xl overflow-hidden bg-bg-light hover:bg-black/20 transition-colors flex flex-col group cursor-pointer">
+              <FadeIn delay={200} direction="up">
+              <Link to="/project/mqtt-monitoring" className="border border-border-light rounded-xl overflow-hidden bg-bg-light hover:bg-black/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col group cursor-pointer h-full">
                 <div className="h-48 overflow-hidden relative border-b border-border-light">
                   <img src={`${import.meta.env.BASE_URL}mqtt-realtime-graph.jpg`} alt="Data Dashboard" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
@@ -176,9 +187,11 @@ export default function Home() {
                   </div>
                 </div>
               </Link>
+              </FadeIn>
 
               {/* Project 4: MV Cable */}
-              <Link to="/project/mv-cable" className="border border-border-light rounded-xl overflow-hidden bg-bg-light hover:bg-black/20 transition-colors flex flex-col group cursor-pointer">
+              <FadeIn delay={300} direction="up">
+              <Link to="/project/mv-cable" className="border border-border-light rounded-xl overflow-hidden bg-bg-light hover:bg-black/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col group cursor-pointer h-full">
                 <div className="h-48 overflow-hidden relative border-b border-border-light">
                   <img src={`${import.meta.env.BASE_URL}main.jpg`} alt="MV Commissioning Field Work" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
@@ -200,16 +213,19 @@ export default function Home() {
                   </div>
                 </div>
               </Link>
+              </FadeIn>
             </div>
           </div>
         </section>
 
         {/* Skills & Credentials Section */}
         <section className="p-8 md:p-16 lg:p-24 border-b border-border-light">
-          <h2 className="font-serif text-[28px] mb-12">Skills &amp; credentials</h2>
+          <FadeIn delay={0} direction="up">
+            <h2 className="font-serif text-[28px] mb-12">Skills &amp; credentials</h2>
+          </FadeIn>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {/* Box 1 */}
+            <FadeIn delay={0} direction="up">
             <div className="bg-bg-light rounded-xl p-8 border border-border-light">
               <h4 className="text-[11px] uppercase tracking-wider font-medium text-text-grey mb-6">Simulation &amp; power</h4>
               <div className="flex flex-wrap gap-2">
@@ -220,8 +236,9 @@ export default function Home() {
                 ))}
               </div>
             </div>
+            </FadeIn>
 
-            {/* Box 2 */}
+            <FadeIn delay={100} direction="up">
             <div className="bg-bg-light rounded-xl p-8 border border-border-light">
               <h4 className="text-[11px] uppercase tracking-wider font-medium text-text-grey mb-6">Programming</h4>
               <div className="flex flex-wrap gap-2">
@@ -232,8 +249,9 @@ export default function Home() {
                 ))}
               </div>
             </div>
+            </FadeIn>
 
-            {/* Box 3 */}
+            <FadeIn delay={200} direction="up">
             <div className="bg-bg-light rounded-xl p-8 border border-border-light">
               <h4 className="text-[11px] uppercase tracking-wider font-medium text-text-grey mb-6">Protocols &amp; tools</h4>
               <div className="flex flex-wrap gap-2">
@@ -244,15 +262,18 @@ export default function Home() {
                 ))}
               </div>
             </div>
+            </FadeIn>
           </div>
 
           {/* Credentials Row */}
           <div className="flex flex-wrap gap-4">
-            {['VESI trained', 'Active ESI worker', 'AusNet site inducted', 'Swinburne University'].map(cred => (
-              <div key={cred} className="inline-flex items-center gap-2 bg-bg-light border border-border-light px-4 py-2 rounded-full text-[13px]">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-green-text"></span>
-                {cred}
-              </div>
+            {['VESI trained', 'Active ESI worker', 'AusNet site inducted', 'Swinburne University'].map((cred, idx) => (
+              <FadeIn key={cred} delay={idx * 80} direction="up">
+                <div className="inline-flex items-center gap-2 bg-bg-light border border-border-light px-4 py-2 rounded-full text-[13px] hover:scale-105 transition-transform duration-200 cursor-default">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent-green-text"></span>
+                  {cred}
+                </div>
+              </FadeIn>
             ))}
           </div>
         </section>
