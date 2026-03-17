@@ -69,7 +69,7 @@ export default function Home() {
               <img 
                 src={`${import.meta.env.BASE_URL}hero.jpg`}
                 alt="Lomitha Wickramarachchi"
-                className="w-full h-full object-cover object-[center_40%]"
+                className="w-full h-full object-cover object-[center_50%]"
               />
             </div>
             
