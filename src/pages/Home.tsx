@@ -67,10 +67,9 @@ export default function Home() {
           <div className="p-8 md:p-16 lg:p-24 bg-bg-light flex flex-col justify-center gap-6">
             <div className="w-full aspect-[4/3] md:aspect-square lg:aspect-[4/3] bg-bg-light border border-border-light rounded-xl flex items-end relative overflow-hidden group">
               <img 
-                src="https://i.imgur.com/Jli7cGX.jpeg" 
-                alt="Lomitha Wickramarachchi" 
-                className="w-full h-full object-cover object-[center_65%]"
-                referrerPolicy="no-referrer"
+                src={`${import.meta.env.BASE_URL}hero.jpg`}
+                alt="Lomitha Wickramarachchi"
+                className="w-full h-full object-cover object-[center_40%]"
               />
             </div>
             
