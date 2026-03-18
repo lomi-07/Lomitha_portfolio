@@ -127,7 +127,7 @@ export default function ProjectDetails() {
                       referrerPolicy="no-referrer" 
                     />
                   </div>
-                  <p className="text-[13px] text-text-grey font-medium tracking-wide uppercase opacity-70">Van</p>
+                  <p className="text-[13px] text-text-grey font-medium tracking-wide uppercase opacity-70">Report Analysis</p>
                 </div>
                 <div className="space-y-4">
                   <div className="aspect-video rounded-xl overflow-hidden border border-border-light bg-bg-light shadow-sm">
