@@ -160,7 +160,7 @@ export default function ProjectDetails() {
           <div className="lg:col-span-2 space-y-8">
             {id === 'mv-cable' ? (
               <div className="bg-bg-light rounded-xl p-8 border border-border-light border-dashed flex items-center justify-center text-text-grey italic text-[14px]">
-                Field documentation and site photos displayed above.
+                Some of the site photos taken.
               </div>
             ) : (
               project.images.map((img, idx) => (
