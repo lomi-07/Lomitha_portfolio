@@ -144,13 +144,13 @@ export default function ProjectDetails() {
               <div className="space-y-4">
                 <div className="rounded-xl overflow-hidden border border-border-light bg-white shadow-sm flex items-center justify-center p-4 md:p-8">
                   <img 
-                    src={`${import.meta.env.BASE_URL}field-sketch.jpg`}
+                    src={`${import.meta.env.BASE_URL}field-truck.jpg`}
                     alt="Sketch" 
                     className="w-full h-auto max-w-4xl mx-auto" 
                     referrerPolicy="no-referrer" 
                   />
                 </div>
-                <p className="text-[13px] text-text-grey font-medium tracking-wide uppercase opacity-70">Sketch</p>
+                <p className="text-[13px] text-text-grey font-medium tracking-wide uppercase opacity-70">field yute</p>
               </div>
             </div>
           )}
