@@ -112,18 +112,18 @@ export default function Home() {
               <div className="p-8 md:p-12 bg-bg-light group-hover:bg-transparent transition-colors flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="bg-accent-amber-bg text-accent-amber-text px-3 py-1 rounded-full text-[12px] font-medium w-fit">
-                    ★ Capstone 2025 · EEE40005
+                    ★ Capstone · EEE40005
                   </div>
                   <div className="bg-accent-green-bg text-accent-green-text px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-bold w-fit">
-                    In progress
+                    IEEE ICEI 2026
                   </div>
                 </div>
-                <h3 className="font-serif text-2xl mb-4 group-hover:text-accent-amber-text transition-colors">350 kW Three Phase EV Fast Charging System with V2G Integration</h3>
+                <h3 className="font-serif text-2xl mb-4 group-hover:text-accent-amber-text transition-colors">Active Filtering and Autonomous V2G Dispatch for EV Fast Charging Sites</h3>
                 <p className="text-[14px] text-text-grey leading-relaxed mb-8">
-                  This is my final year capstone project where I am designing a 350 kW three phase EV fast charging system with Vehicle to Grid (V2G) capability. The system is split into three main subsystems: a grid side D-STATCOM with an LCL filter to handle harmonics, a bidirectional buck boost converter with a three phase front end, and a charger based BMS for SoC and SoH estimation.
+                  My final year capstone, now written up as a journal paper. A bidirectional EV charger and a shunt active power filter share a 400 V connection with a 29 kW rectifier load, and a fuzzy energy management system switches the charger into V2G during voltage sags using only local voltage and battery charge. The filter cut grid current distortion from 15.4 % to 2.75 % TDD, inside the IEEE Std 519 limit, in both power flow directions.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {['MATLAB/Simulink', 'V2G', 'D-STATCOM', 'BMS', 'LCL filter', 'Power electronics', 'DQ transformation'].map(tag => (
+                  {['MATLAB/Simulink', 'Simscape Electrical', 'V2G', 'Active power filter', 'Fuzzy control', 'SRF-PLL', 'IEEE Std 519'].map(tag => (
                     <span key={tag} className="px-3 py-1 border border-border-light rounded-full text-[12px] text-text-grey bg-bg-light">
                       {tag}
                     </span>
@@ -131,7 +131,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="h-64 lg:h-auto bg-bg-light lg:border-l border-border-light overflow-hidden relative">
-                <img src={`${import.meta.env.BASE_URL}capstone-1.png`} alt="EV Charging Station" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
+                <img src={`${import.meta.env.BASE_URL}capstone-site-diagram.png`} alt="Single line diagram of the charging site" className="w-full h-full object-contain bg-white p-4 transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
               </div>
             </Link>

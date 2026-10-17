@@ -4,19 +4,28 @@ import { FadeIn } from '../components/FadeIn';
 
 const projectsData = {
   'capstone-2025': {
-    title: '350 kW Three Phase EV Fast Charging System with V2G Integration',
-    tag: '★ Capstone 2025 · EEE40005',
+    title: 'Active Filtering and Autonomous V2G Dispatch for EV Fast Charging Sites',
+    tag: '★ Capstone · EEE40005',
     tagColor: 'amber',
-    description: 'This is my final year capstone project where me and two other electrical engineering students are designing a 350 kW three phase EV fast charging system with Vehicle to Grid (V2G) capability. The system spans three subsystems: a grid side D-STATCOM with an LCL filter for harmonic mitigation, a bidirectional buck boost converter with a three phase front end, and a charger based BMS with SoC and SoH estimation from the battery side. I am currently completing the Simulink and Simscape model integration with the models of my teammates after a deep literature review on passive and active filters, Kalman filter SoC estimation, and semi empirical SoH modelling.',
+    description: 'Fast charging sites concentrate rectifier harmonics at a single connection point, and the usual fix, a D-STATCOM, can only exchange reactive power. For my capstone, fellow student Nijil Sunil Mathew and I modelled a site where a bidirectional EV charger and a shunt active power filter (SAPF) share a 400 V point of common coupling with a 29 kW six pulse rectifier load. A Mamdani fuzzy energy management system watches only the local voltage and the battery state of charge, and switches the charger from charging (G2V) to discharging (V2G) during a voltage sag, while refusing to discharge a depleted battery. The whole site was built as a switched model in MATLAB/Simulink and Simscape Electrical, and the results were assessed against IEEE Std 519-2022. Preliminary results were accepted at the IEEE ICEI 2026 conference, and the full study has been written up as a journal paper with our supervisors.',
     details: [
-      'Completed literature review spanning grid impacts, D-STATCOM, AFE converters, and BMS algorithms',
-      'Designed full subsystem block diagram with PLL, DQ transformation, DC link control and VSI based D-STATCOM',
-      'Defined 6 quantified objectives including THDv ≤ 3%, PF ≥ 0.98, and SoC/SoH RMSE < 5%',
-      'Currently integrating Simulink subsystem models with IEEE referenced parameters'
+      'SAPF cut grid current TDD from 15.4 % to 2.75 % in G2V and 2.89 % in V2G, inside the 8 % IEEE Std 519-2022 limit, with individual harmonic limits met up to the 35th order',
+      'Showed compensation is independent of power flow direction: residual harmonic current of 1.93 A in G2V against 2.02 A in V2G, so the higher V2G THD comes from a smaller fundamental, not weaker filtering',
+      'Fuzzy EMS reversed the battery current autonomously through a 0.85 pu sag with no external command, keeping the 750 V DC link within +6.25 % and −5.66 %',
+      'Traced the 24 % current overshoot to the zero of the battery current PI controller through small signal analysis, and showed the supervisory loop gain stays below 0.2',
+      'SoC gating withheld discharge at 20 % SoC while harmonic filtering and unity power factor continued',
+      'Unity displacement power factor in both directions, and a 78 % cut in net site import (47.8 kW to 10.6 kW) during V2G',
+      'Built the dq frame AFE control with SRF-PLL, current decoupling and 10 kHz SPWM, plus the bidirectional DC/DC stage and 350 V, 285 Ah battery model'
     ],
     images: [
-      `${import.meta.env.BASE_URL}capstone-1.png`,
-      `${import.meta.env.BASE_URL}capstone-2.png`
+      `${import.meta.env.BASE_URL}capstone-site-diagram.png`,
+      `${import.meta.env.BASE_URL}capstone-harmonics.png`,
+      `${import.meta.env.BASE_URL}capstone-sag-response.png`
+    ],
+    captions: [
+      'Site single line diagram: SAPF, six pulse load and two stage bidirectional charger on a shared 400 V PCC, with the supervisory fuzzy EMS',
+      'Grid current with the SAPF switched out and back in (left), and the harmonic spectrum with the filter off and on (right)',
+      'Autonomous G2V to V2G to G2V reversal through a 0.85 pu sag: PCC voltage, battery current against the EMS command, and EV DC link voltage'
     ]
   },
   'railway-crossing': {
@@ -106,7 +115,7 @@ export default function ProjectDetails() {
             </div>
             {id === 'capstone-2025' && (
               <div className="bg-accent-green-bg text-accent-green-text px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-bold w-fit">
-                In progress
+                IEEE ICEI 2026
               </div>
             )}
           </div>
@@ -163,11 +172,19 @@ export default function ProjectDetails() {
                 Some of the site photos taken.
               </div>
             ) : (
-              project.images.map((img, idx) => (
-                <div key={idx} className="rounded-xl overflow-hidden border border-border-light bg-bg-light">
-                  <img src={img} alt={`${project.title} image ${idx + 1}`} className="w-full h-auto object-cover" referrerPolicy="no-referrer" />
-                </div>
-              ))
+              project.images.map((img, idx) => {
+                const caption = 'captions' in project ? project.captions[idx] : undefined;
+                return (
+                  <figure key={idx} className="space-y-3">
+                    <div className="rounded-xl overflow-hidden border border-border-light bg-bg-light">
+                      <img src={img} alt={caption ?? `${project.title} image ${idx + 1}`} className="w-full h-auto object-cover" referrerPolicy="no-referrer" />
+                    </div>
+                    {caption && (
+                      <figcaption className="text-[13px] text-text-grey leading-relaxed">{caption}</figcaption>
+                    )}
+                  </figure>
+                );
+              })
             )}
           </div>
           
