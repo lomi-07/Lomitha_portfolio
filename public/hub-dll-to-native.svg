@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#AAAAAA"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="560" fill="#141414"/>
+
+  <!-- Column headings -->
+  <text x="290" y="58" text-anchor="middle" fill="#AAAAAA" font-size="18" letter-spacing="3">BEFORE</text>
+  <text x="910" y="58" text-anchor="middle" fill="#4ADE80" font-size="18" letter-spacing="3">AFTER</text>
+
+  <!-- BEFORE: Simulink source -->
+  <rect x="140" y="90" width="300" height="78" rx="12" fill="#1E1E1E" stroke="#444" stroke-width="2"/>
+  <text x="290" y="124" text-anchor="middle" fill="#F5F5F3" font-size="20" font-weight="bold">Inverter control</text>
+  <text x="290" y="150" text-anchor="middle" fill="#AAAAAA" font-size="16">MATLAB/Simulink, Stateflow</text>
+
+  <line x1="290" y1="170" x2="290" y2="220" stroke="#AAAAAA" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="304" y="201" fill="#AAAAAA" font-size="14">compiled</text>
+
+  <!-- BEFORE: PSCAD case with DLL -->
+  <rect x="80" y="226" width="420" height="270" rx="14" fill="none" stroke="#555" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="100" y="256" fill="#AAAAAA" font-size="15" letter-spacing="1">PSCAD/EMTDC CASE</text>
+  <rect x="140" y="280" width="300" height="120" rx="12" fill="#2A1A1A" stroke="#F87171" stroke-width="2"/>
+  <!-- padlock -->
+  <rect x="274" y="318" width="32" height="24" rx="4" fill="#F87171"/>
+  <path d="M281,318 v-8 a9,9 0 0 1 18,0 v8" fill="none" stroke="#F87171" stroke-width="4"/>
+  <text x="290" y="370" text-anchor="middle" fill="#F5F5F3" font-size="19" font-weight="bold">Compiled DLL</text>
+  <text x="290" y="392" text-anchor="middle" fill="#F87171" font-size="15">sealed: cannot be read or edited</text>
+  <text x="290" y="440" text-anchor="middle" fill="#AAAAAA" font-size="15">network, filter, transformer, grid</text>
+  <text x="290" y="463" text-anchor="middle" fill="#AAAAAA" font-size="15">drawn natively around the black box</text>
+
+  <!-- Middle arrow -->
+  <line x1="530" y1="361" x2="672" y2="361" stroke="#4ADE80" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="601" y="340" text-anchor="middle" fill="#4ADE80" font-size="15">replace the</text>
+  <text x="601" y="390" text-anchor="middle" fill="#4ADE80" font-size="15">black box</text>
+
+  <!-- AFTER: PSCAD case native -->
+  <rect x="700" y="90" width="420" height="406" rx="14" fill="none" stroke="#4ADE80" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="720" y="120" fill="#4ADE80" font-size="15" letter-spacing="1">SAME PSCAD/EMTDC CASE</text>
+
+  <rect x="740" y="140" width="340" height="66" rx="10" fill="#0F3D2E" stroke="#4ADE80" stroke-width="1.5"/>
+  <text x="910" y="168" text-anchor="middle" fill="#F5F5F3" font-size="18" font-weight="bold">Native PSCAD blocks</text>
+  <text x="910" y="191" text-anchor="middle" fill="#AAAAAA" font-size="14">control drawn on visible canvases</text>
+
+  <rect x="740" y="218" width="340" height="66" rx="10" fill="#0F3D2E" stroke="#4ADE80" stroke-width="1.5"/>
+  <text x="910" y="246" text-anchor="middle" fill="#F5F5F3" font-size="18" font-weight="bold">Fortran source kernels</text>
+  <text x="910" y="269" text-anchor="middle" fill="#AAAAAA" font-size="14">state machines, compiled with the case</text>
+
+  <rect x="740" y="296" width="340" height="66" rx="10" fill="#0F3D2E" stroke="#4ADE80" stroke-width="1.5"/>
+  <text x="910" y="324" text-anchor="middle" fill="#F5F5F3" font-size="18" font-weight="bold">Same pins and settings</text>
+  <text x="910" y="347" text-anchor="middle" fill="#AAAAAA" font-size="14">drops into the vendor's own test case</text>
+
+  <text x="910" y="410" text-anchor="middle" fill="#F5F5F3" font-size="17">No DLL. Every signal visible.</text>
+  <text x="910" y="436" text-anchor="middle" fill="#AAAAAA" font-size="15">Ride-through, PLL, P(f), Q(U)</text>
+  <text x="910" y="459" text-anchor="middle" fill="#AAAAAA" font-size="15">and protection can be inspected</text>
+</svg>

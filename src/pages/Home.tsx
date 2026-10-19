@@ -14,6 +14,13 @@ export default function Home() {
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-text-dark transition-all duration-300 group-hover:w-full"></span>
           </a>
           <button
+            onClick={() => document.getElementById('research')?.scrollIntoView({ behavior: 'smooth' })}
+            className="hover:text-text-dark transition-all duration-300 hover:translate-y-[-2px] relative group bg-transparent border-none cursor-pointer text-[13px] text-text-grey"
+          >
+            Research
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-text-dark transition-all duration-300 group-hover:w-full"></span>
+          </button>
+          <button
   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
   className="hover:text-text-dark transition-all duration-300 hover:translate-y-[-2px] relative group bg-transparent border-none cursor-pointer text-[13px] text-text-grey"
 >
@@ -94,6 +101,45 @@ export default function Home() {
               </FadeIn>
             </div>
           </div>
+        </section>
+
+        {/* Research Experience Section */}
+        <section id="research" className="p-8 md:p-16 lg:p-24 border-b border-border-light">
+          <FadeIn delay={0} direction="up">
+            <div className="flex items-baseline gap-4 mb-12">
+              <h2 className="font-serif text-[28px]">Research experience</h2>
+              <span className="text-text-grey text-[14px]">Siemens Energy Hub, Swinburne</span>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0} direction="up">
+          <Link to="/project/fimer-native-inverter" className="grid grid-cols-1 lg:grid-cols-2 border border-border-light rounded-xl overflow-hidden hover:bg-black/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-md group cursor-pointer">
+            <div className="p-8 md:p-12 bg-bg-light group-hover:bg-transparent transition-colors flex flex-col justify-center">
+              <div className="flex flex-wrap items-center gap-3 mb-6">
+                <div className="bg-accent-blue-bg text-accent-blue-text px-3 py-1 rounded-full text-[12px] font-medium w-fit">
+                  Research Assistant · Industry project
+                </div>
+                <div className="bg-accent-green-bg text-accent-green-text px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-bold w-fit">
+                  June 2026 to present
+                </div>
+              </div>
+              <h3 className="font-serif text-2xl mb-4 group-hover:text-accent-blue-text transition-colors">Native PSCAD Model of a FIMER PVS980 Central Solar Inverter</h3>
+              <p className="text-[14px] text-text-grey leading-relaxed mb-8">
+                FIMER's inverter control only runs in PSCAD as a sealed, compiled DLL. I led the team's work to replace it with a fully native PSCAD and Fortran model that drops into FIMER's own test case and reproduces their results through faults, voltage swells, phase jumps and frequency events.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['PSCAD/EMTDC', 'Fortran', 'MATLAB/Simulink', 'Python', 'Fault ride-through', 'Grid connection', 'Model validation'].map(tag => (
+                  <span key={tag} className="px-3 py-1 border border-border-light rounded-full text-[12px] text-text-grey bg-bg-light">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="h-64 lg:h-auto bg-[#141414] lg:border-l border-border-light overflow-hidden relative flex items-center">
+              <img src={`${import.meta.env.BASE_URL}hub-dll-to-native.svg`} alt="Replacing a sealed DLL with a native PSCAD model" className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105" />
+            </div>
+          </Link>
+          </FadeIn>
         </section>
 
         {/* Projects Section */}
@@ -231,7 +277,7 @@ export default function Home() {
             <div className="bg-bg-light rounded-xl p-8 border border-border-light">
               <h4 className="text-[11px] uppercase tracking-wider font-medium text-text-grey mb-6">Simulation &amp; power</h4>
               <div className="flex flex-wrap gap-2">
-                {['MATLAB', 'Simulink', 'Simscape', 'Psim', 'NI LabVIEW', 'SCADA'].map(skill => (
+                {['PSCAD/EMTDC', 'MATLAB', 'Simulink', 'Simscape', 'PSS/E', 'Psim', 'NI LabVIEW', 'SCADA'].map(skill => (
                   <span key={skill} className="px-3 py-1.5 bg-bg-light border border-border-light rounded-full text-[13px]">
                     {skill}
                   </span>
@@ -244,7 +290,7 @@ export default function Home() {
             <div className="bg-bg-light rounded-xl p-8 border border-border-light">
               <h4 className="text-[11px] uppercase tracking-wider font-medium text-text-grey mb-6">Programming</h4>
               <div className="flex flex-wrap gap-2">
-                {['Python', 'C++', 'Arduino', 'PyTorch', 'scikit learn', 'pandas'].map(skill => (
+                {['Python', 'Fortran', 'C++', 'Arduino', 'PyTorch', 'scikit learn', 'pandas'].map(skill => (
                   <span key={skill} className="px-3 py-1.5 bg-bg-light border border-border-light rounded-full text-[13px]">
                     {skill}
                   </span>

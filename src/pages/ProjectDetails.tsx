@@ -3,6 +3,29 @@ import { ArrowLeft } from 'lucide-react';
 import { FadeIn } from '../components/FadeIn';
 
 const projectsData = {
+  'fimer-native-inverter': {
+    title: 'Native PSCAD Model of a FIMER PVS980 Central Solar Inverter',
+    tag: 'Research Assistant · Siemens Energy Hub',
+    tagColor: 'blue',
+    description: 'FIMER designs the control software for its PVS980 central solar inverter in MATLAB/Simulink. In PSCAD/EMTDC, the electromagnetic transient simulator used for grid connection studies, that control only runs as a compiled DLL, so nothing inside it can be seen or edited. Our team at Swinburne set out to replace the black box with a fully native PSCAD model that behaves the same way. I led the conversion: I set the scope, made the engineering decisions, ran and reviewed every validation run in PSCAD, and handled the technical contact with FIMER. The build scripts and Fortran were produced through AI assisted development that I directed and checked. The work moved in three stages. First, single Simulink subsystems such as fault ride-through and the reactive power chain were rebuilt as native PSCAD blocks and checked against Simulink. Then 59 numbered changes to the team\'s integrated models were each run side by side with FIMER\'s own DLL model. Finally, a native model in FIMER\'s own format takes the DLL\'s place inside FIMER\'s test case and reproduces FIMER\'s results across their test matrix.',
+    details: [
+      'Rebuilt the fault ride-through and reactive power subsystems as native PSCAD blocks, matching Simulink at every output before moving on',
+      'Built a native model with no DLL that keeps the original block\'s pins and settings, so it drops straight into FIMER\'s own PSCAD test case',
+      'Reproduced FIMER\'s results across balanced and unbalanced dips, voltage swells, a phase jump, a frequency step and a long dip ending in an LVRT trip, with every remaining difference traced and documented',
+      'Covered PLLs, inner current control, P(f) and under frequency control, the Q(U) reactive power chain, fault ride-through with negative sequence support, and LVRT, HVRT and frequency protection',
+      'Ran each change through offline gates against a reference, a clean PSCAD build, a bit identity check and a side by side run against the vendor model',
+      'Solved undocumented PSCAD behaviour, time step artefacts and block execution order effects, and built crash resumable scripted builds through PSCAD\'s automation interface',
+      'Found that two problems reported in the model came from test bench wiring, and supplied corrected test cases'
+    ],
+    images: [
+      `${import.meta.env.BASE_URL}hub-dll-to-native.svg`,
+      `${import.meta.env.BASE_URL}hub-validation-pipeline.svg`
+    ],
+    captions: [
+      'The goal: replace the sealed DLL inside the PSCAD case with control that can be read, edited and checked',
+      'The validation workflow every model change went through before it was accepted'
+    ]
+  },
   'capstone-2025': {
     title: 'Active Filtering and Autonomous V2G Dispatch for EV Fast Charging Sites',
     tag: '★ Capstone · EEE40005',
@@ -113,6 +136,11 @@ export default function ProjectDetails() {
             <div className={`inline-block bg-accent-${project.tagColor}-bg text-accent-${project.tagColor}-text px-3 py-1 rounded-full text-[12px] font-medium`}>
               {project.tag}
             </div>
+            {id === 'fimer-native-inverter' && (
+              <div className="bg-accent-green-bg text-accent-green-text px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-bold w-fit">
+                June 2026 to present
+              </div>
+            )}
             {id === 'capstone-2025' && (
               <div className="bg-accent-green-bg text-accent-green-text px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-bold w-fit">
                 IEEE ICEI 2026

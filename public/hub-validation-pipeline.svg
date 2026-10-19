@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#AAAAAA"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="420" fill="#141414"/>
+  <text x="600" y="52" text-anchor="middle" fill="#AAAAAA" font-size="18" letter-spacing="3">EVERY CHANGE PASSES FIVE GATES</text>
+
+  <!-- 5 boxes: width 196, gap 40, start 40 -->
+  <g>
+    <rect x="40" y="96" width="196" height="200" rx="12" fill="#1E1E1E" stroke="#60A5FA" stroke-width="2"/>
+    <text x="138" y="138" text-anchor="middle" fill="#60A5FA" font-size="30" font-weight="bold">1</text>
+    <text x="138" y="176" text-anchor="middle" fill="#F5F5F3" font-size="18" font-weight="bold">Reference</text>
+    <text x="138" y="206" text-anchor="middle" fill="#AAAAAA" font-size="14">Simulink run alone,</text>
+    <text x="138" y="226" text-anchor="middle" fill="#AAAAAA" font-size="14">a Python or C copy,</text>
+    <text x="138" y="246" text-anchor="middle" fill="#AAAAAA" font-size="14">or the vendor's DLL</text>
+  </g>
+  <line x1="238" y1="196" x2="274" y2="196" stroke="#AAAAAA" stroke-width="2" marker-end="url(#a2)"/>
+  <g>
+    <rect x="276" y="96" width="196" height="200" rx="12" fill="#1E1E1E" stroke="#60A5FA" stroke-width="2"/>
+    <text x="374" y="138" text-anchor="middle" fill="#60A5FA" font-size="30" font-weight="bold">2</text>
+    <text x="374" y="176" text-anchor="middle" fill="#F5F5F3" font-size="18" font-weight="bold">Offline gate</text>
+    <text x="374" y="206" text-anchor="middle" fill="#AAAAAA" font-size="14">Fortran stepped</text>
+    <text x="374" y="226" text-anchor="middle" fill="#AAAAAA" font-size="14">against the reference:</text>
+    <text x="374" y="246" text-anchor="middle" fill="#AAAAAA" font-size="14">zero mismatches</text>
+  </g>
+  <line x1="474" y1="196" x2="510" y2="196" stroke="#AAAAAA" stroke-width="2" marker-end="url(#a2)"/>
+  <g>
+    <rect x="512" y="96" width="196" height="200" rx="12" fill="#1E1E1E" stroke="#60A5FA" stroke-width="2"/>
+    <text x="610" y="138" text-anchor="middle" fill="#60A5FA" font-size="30" font-weight="bold">3</text>
+    <text x="610" y="176" text-anchor="middle" fill="#F5F5F3" font-size="18" font-weight="bold">PSCAD build</text>
+    <text x="610" y="206" text-anchor="middle" fill="#AAAAAA" font-size="14">zero build errors,</text>
+    <text x="610" y="226" text-anchor="middle" fill="#AAAAAA" font-size="14">then a scripted run</text>
+    <text x="610" y="246" text-anchor="middle" fill="#AAAAAA" font-size="14">and comparison</text>
+  </g>
+  <line x1="710" y1="196" x2="746" y2="196" stroke="#AAAAAA" stroke-width="2" marker-end="url(#a2)"/>
+  <g>
+    <rect x="748" y="96" width="196" height="200" rx="12" fill="#1E1E1E" stroke="#60A5FA" stroke-width="2"/>
+    <text x="846" y="138" text-anchor="middle" fill="#60A5FA" font-size="30" font-weight="bold">4</text>
+    <text x="846" y="176" text-anchor="middle" fill="#F5F5F3" font-size="18" font-weight="bold">Bit identity</text>
+    <text x="846" y="206" text-anchor="middle" fill="#AAAAAA" font-size="14">anything that should</text>
+    <text x="846" y="226" text-anchor="middle" fill="#AAAAAA" font-size="14">not move is equal,</text>
+    <text x="846" y="246" text-anchor="middle" fill="#AAAAAA" font-size="14">sample for sample</text>
+  </g>
+  <line x1="946" y1="196" x2="982" y2="196" stroke="#AAAAAA" stroke-width="2" marker-end="url(#a2)"/>
+  <g>
+    <rect x="984" y="96" width="196" height="200" rx="12" fill="#0F3D2E" stroke="#4ADE80" stroke-width="2"/>
+    <text x="1082" y="138" text-anchor="middle" fill="#4ADE80" font-size="30" font-weight="bold">5</text>
+    <text x="1082" y="176" text-anchor="middle" fill="#F5F5F3" font-size="18" font-weight="bold">Side by side</text>
+    <text x="1082" y="206" text-anchor="middle" fill="#AAAAAA" font-size="14">same event run on</text>
+    <text x="1082" y="226" text-anchor="middle" fill="#AAAAAA" font-size="14">the vendor's own</text>
+    <text x="1082" y="246" text-anchor="middle" fill="#AAAAAA" font-size="14">DLL model</text>
+  </g>
+
+  <text x="600" y="352" text-anchor="middle" fill="#AAAAAA" font-size="16">Gate 2 takes seconds; a PSCAD build cycle takes far longer, so each kernel is proven before it costs any PSCAD time.</text>
+  <text x="600" y="380" text-anchor="middle" fill="#AAAAAA" font-size="16">Each change also gets its own written change log.</text>
+</svg>
