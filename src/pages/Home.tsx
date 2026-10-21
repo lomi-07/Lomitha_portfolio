@@ -50,7 +50,7 @@ export default function Home() {
             </FadeIn>
             <FadeIn delay={200} direction="up">
               <p className="text-[14px] text-text-grey leading-relaxed max-w-md mb-10">
-                I am a final year Electrical and Electronics Engineering student at Swinburne University. My studies and projects focus on power systems, renewable energy, and the latest in electric vehicle charging technology.
+                I'm a final year Electrical and Electronic Engineering student at Swinburne University, focused on power systems and grid connection. As a Research Assistant at the Siemens Energy Hub, I build and validate inverter models in PSCAD for FIMER. I've also done HV testing on the AusNet and Jemena networks, and co-authored an IEEE paper on vehicle to grid support.
               </p>
             </FadeIn>
             <FadeIn delay={300} direction="up">
