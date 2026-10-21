@@ -108,6 +108,8 @@ const projectsData = {
 export default function ProjectDetails() {
   const { id } = useParams<{ id: string }>();
   const project = id ? projectsData[id as keyof typeof projectsData] : null;
+  // The hub page's explanatory diagrams run full width (about 1.5 times the usual image size)
+  const wideImages = id === 'fimer-native-inverter';
 
   if (!project) {
     return (
@@ -138,7 +140,7 @@ export default function ProjectDetails() {
             </div>
             {id === 'fimer-native-inverter' && (
               <div className="bg-accent-green-bg text-accent-green-text px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-bold w-fit">
-                June 2026 to present
+                May 2026 to present
               </div>
             )}
             {id === 'capstone-2025' && (
@@ -194,7 +196,7 @@ export default function ProjectDetails() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
-          <div className="lg:col-span-2 space-y-8">
+          <div className={`${wideImages ? 'lg:col-span-3' : 'lg:col-span-2'} space-y-8`}>
             {id === 'mv-cable' ? (
               <div className="bg-bg-light rounded-xl p-8 border border-border-light border-dashed flex items-center justify-center text-text-grey italic text-[14px]">
                 Some of the site photos taken.
@@ -216,7 +218,7 @@ export default function ProjectDetails() {
             )}
           </div>
           
-          <div className="lg:col-span-1">
+          <div className={wideImages ? 'lg:col-span-3' : 'lg:col-span-1'}>
             <div className="sticky top-24 bg-bg-light rounded-xl p-8 border border-border-light">
               <h3 className="text-[13px] uppercase tracking-wider font-medium mb-6 text-text-dark">Key Details</h3>
               <ul className="space-y-4 text-[14px] text-text-grey">
@@ -245,8 +247,8 @@ export default function ProjectDetails() {
             LinkedIn
           </a>
           <a 
-            href={`${import.meta.env.BASE_URL}cv-lomitha.pdf`} 
-            download 
+            href={`${import.meta.env.BASE_URL}Lomitha_Wickramarachchi_CV.pdf`} 
+            download="Lomitha_Wickramarachchi_CV.pdf"
             className="bg-text-dark text-bg-light px-6 py-3 rounded-xl text-[14px] hover:opacity-90 transition-opacity"
           >
             Download CV

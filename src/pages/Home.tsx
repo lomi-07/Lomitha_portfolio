@@ -120,7 +120,7 @@ export default function Home() {
                   Research Assistant · Industry project
                 </div>
                 <div className="bg-accent-green-bg text-accent-green-text px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-bold w-fit">
-                  June 2026 to present
+                  May 2026 to present
                 </div>
               </div>
               <h3 className="font-serif text-2xl mb-4 group-hover:text-accent-blue-text transition-colors">Native PSCAD Model of a FIMER Central Solar Inverter</h3>
@@ -315,7 +315,7 @@ export default function Home() {
 
           {/* Credentials Row */}
           <div className="flex flex-wrap gap-4">
-            {['VESI trained', 'Active ESI worker', 'AusNet site inducted', 'Swinburne University'].map((cred, idx) => (
+            {['PSS/E Modules 1 & 2 completed', 'PSS SINCAL training completed', 'VESI trained', 'Active ESI worker', 'AusNet site inducted', 'Swinburne University'].map((cred, idx) => (
               <FadeIn key={cred} delay={idx * 80} direction="up">
                 <div className="inline-flex items-center gap-2 bg-bg-light border border-border-light px-4 py-2 rounded-full text-[13px] hover:scale-105 transition-transform duration-200 cursor-default">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent-green-text"></span>
@@ -340,8 +340,8 @@ export default function Home() {
             LinkedIn
           </a>
           <a 
-            href={`${import.meta.env.BASE_URL}cv-lomitha.pdf`} 
-            download 
+            href={`${import.meta.env.BASE_URL}Lomitha_Wickramarachchi_CV.pdf`} 
+            download="Lomitha_Wickramarachchi_CV.pdf"
             className="bg-text-dark text-bg-light px-6 py-3 rounded-xl text-[14px] hover:opacity-90 transition-opacity"
           >
             Download CV
