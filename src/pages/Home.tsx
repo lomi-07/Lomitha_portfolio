@@ -123,7 +123,7 @@ export default function Home() {
                   June 2026 to present
                 </div>
               </div>
-              <h3 className="font-serif text-2xl mb-4 group-hover:text-accent-blue-text transition-colors">Native PSCAD Model of a FIMER PVS980 Central Solar Inverter</h3>
+              <h3 className="font-serif text-2xl mb-4 group-hover:text-accent-blue-text transition-colors">Native PSCAD Model of a FIMER Central Solar Inverter</h3>
               <p className="text-[14px] text-text-grey leading-relaxed mb-8">
                 FIMER's inverter control only runs in PSCAD as a sealed, compiled DLL. I led the team's work to replace it with a fully native PSCAD and Fortran model that drops into FIMER's own test case and reproduces their results through faults, voltage swells, phase jumps and frequency events.
               </p>
@@ -277,7 +277,7 @@ export default function Home() {
             <div className="bg-bg-light rounded-xl p-8 border border-border-light">
               <h4 className="text-[11px] uppercase tracking-wider font-medium text-text-grey mb-6">Simulation &amp; power</h4>
               <div className="flex flex-wrap gap-2">
-                {['PSCAD/EMTDC', 'MATLAB', 'Simulink', 'Simscape', 'PSS/E', 'Psim', 'NI LabVIEW', 'SCADA'].map(skill => (
+                {['PSCAD/EMTDC', 'PSS/E', 'PSS SINCAL', 'MATLAB', 'Simulink', 'Simscape Electrical', 'Psim', 'NI LabVIEW', 'SCADA'].map(skill => (
                   <span key={skill} className="px-3 py-1.5 bg-bg-light border border-border-light rounded-full text-[13px]">
                     {skill}
                   </span>
@@ -288,9 +288,9 @@ export default function Home() {
 
             <FadeIn delay={100} direction="up">
             <div className="bg-bg-light rounded-xl p-8 border border-border-light">
-              <h4 className="text-[11px] uppercase tracking-wider font-medium text-text-grey mb-6">Programming</h4>
+              <h4 className="text-[11px] uppercase tracking-wider font-medium text-text-grey mb-6">Programming &amp; automation</h4>
               <div className="flex flex-wrap gap-2">
-                {['Python', 'Fortran', 'C++', 'Arduino', 'PyTorch', 'scikit learn', 'pandas'].map(skill => (
+                {['Python', 'Fortran', 'C++', 'PSCAD automation', 'Claude Code', 'AI agents', 'Arduino', 'pandas'].map(skill => (
                   <span key={skill} className="px-3 py-1.5 bg-bg-light border border-border-light rounded-full text-[13px]">
                     {skill}
                   </span>
@@ -301,9 +301,9 @@ export default function Home() {
 
             <FadeIn delay={200} direction="up">
             <div className="bg-bg-light rounded-xl p-8 border border-border-light">
-              <h4 className="text-[11px] uppercase tracking-wider font-medium text-text-grey mb-6">Protocols &amp; tools</h4>
+              <h4 className="text-[11px] uppercase tracking-wider font-medium text-text-grey mb-6">Standards &amp; testing</h4>
               <div className="flex flex-wrap gap-2">
-                {['MQTT', 'TCP/UDP', 'IEEE report writing', 'Excel', 'VLF testing'].map(skill => (
+                {['AEMO DMAT', 'IEEE Std 519', 'AS/NZS 4777.2', 'VLF testing', 'Partial discharge', 'Tan delta', 'MQTT', 'IEEE report writing'].map(skill => (
                   <span key={skill} className="px-3 py-1.5 bg-bg-light border border-border-light rounded-full text-[13px]">
                     {skill}
                   </span>
