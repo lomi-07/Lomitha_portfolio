@@ -125,8 +125,8 @@ export default function ProjectDetails() {
   return (
     <div className="min-h-screen flex flex-col font-sans text-text-dark selection:bg-accent-green-bg selection:text-accent-green-text">
       <nav className="sticky top-0 z-50 bg-bg-light border-b border-border-light px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="font-serif text-[20px] hover:opacity-80 transition-opacity">Lomitha W.</Link>
-        <Link to="/" className="text-[13px] text-text-grey hover:text-text-dark flex items-center gap-2 transition-colors">
+        <Link to="/" className="font-serif text-[22px] hover:opacity-80 transition-opacity">Lomitha W.</Link>
+        <Link to="/" className="text-[15px] text-text-grey hover:text-text-dark flex items-center gap-2 transition-colors">
           <ArrowLeft size={16} /> Back to Home
         </Link>
       </nav>
@@ -135,22 +135,22 @@ export default function ProjectDetails() {
         <FadeIn delay={0} direction="up">
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-6">
-            <div className={`inline-block bg-accent-${project.tagColor}-bg text-accent-${project.tagColor}-text px-3 py-1 rounded-full text-[12px] font-medium`}>
+            <div className={`inline-block bg-accent-${project.tagColor}-bg text-accent-${project.tagColor}-text px-3 py-1 rounded-full text-[14px] font-medium`}>
               {project.tag}
             </div>
             {id === 'fimer-native-inverter' && (
-              <div className="bg-accent-green-bg text-accent-green-text px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-bold w-fit">
+              <div className="bg-accent-green-bg text-accent-green-text px-3 py-1 rounded-full text-[11px] uppercase tracking-wider font-bold w-fit">
                 May 2026 to present
               </div>
             )}
             {id === 'capstone-2025' && (
-              <div className="bg-accent-green-bg text-accent-green-text px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-bold w-fit">
+              <div className="bg-accent-green-bg text-accent-green-text px-3 py-1 rounded-full text-[11px] uppercase tracking-wider font-bold w-fit">
                 IEEE ICEI 2026
               </div>
             )}
           </div>
           <h1 className="font-serif text-4xl md:text-5xl leading-tight mb-6">{project.title}</h1>
-          <p className="text-[16px] text-text-grey leading-relaxed max-w-3xl mb-12">
+          <p className="text-[18px] text-text-grey leading-relaxed max-w-3xl mb-12">
             {project.description}
           </p>
 
@@ -166,7 +166,7 @@ export default function ProjectDetails() {
                       referrerPolicy="no-referrer" 
                     />
                   </div>
-                  <p className="text-[13px] text-text-grey font-medium tracking-wide uppercase opacity-70">Report Analysis</p>
+                  <p className="text-[15px] text-text-grey font-medium tracking-wide uppercase opacity-70">Report Analysis</p>
                 </div>
                 <div className="space-y-4">
                   <div className="aspect-video rounded-xl overflow-hidden border border-border-light bg-bg-light shadow-sm">
@@ -177,7 +177,7 @@ export default function ProjectDetails() {
                       referrerPolicy="no-referrer" 
                     />
                   </div>
-                  <p className="text-[13px] text-text-grey font-medium tracking-wide uppercase opacity-70">Testing Equipment</p>
+                  <p className="text-[15px] text-text-grey font-medium tracking-wide uppercase opacity-70">Testing Equipment</p>
                 </div>
               </div>
               <div className="space-y-4">
@@ -189,7 +189,7 @@ export default function ProjectDetails() {
                     referrerPolicy="no-referrer" 
                   />
                 </div>
-                <p className="text-[13px] text-text-grey font-medium tracking-wide uppercase opacity-70">field yute</p>
+                <p className="text-[15px] text-text-grey font-medium tracking-wide uppercase opacity-70">field yute</p>
               </div>
             </div>
           )}
@@ -198,7 +198,7 @@ export default function ProjectDetails() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
           <div className={`${wideImages ? 'lg:col-span-3' : 'lg:col-span-2'} space-y-8`}>
             {id === 'mv-cable' ? (
-              <div className="bg-bg-light rounded-xl p-8 border border-border-light border-dashed flex items-center justify-center text-text-grey italic text-[14px]">
+              <div className="bg-bg-light rounded-xl p-8 border border-border-light border-dashed flex items-center justify-center text-text-grey italic text-[16px]">
                 Some of the site photos taken.
               </div>
             ) : (
@@ -210,7 +210,7 @@ export default function ProjectDetails() {
                       <img src={img} alt={caption ?? `${project.title} image ${idx + 1}`} className="w-full h-auto object-cover" referrerPolicy="no-referrer" />
                     </div>
                     {caption && (
-                      <figcaption className="text-[13px] text-text-grey leading-relaxed">{caption}</figcaption>
+                      <figcaption className="text-[15px] text-text-grey leading-relaxed">{caption}</figcaption>
                     )}
                   </figure>
                 );
@@ -220,8 +220,8 @@ export default function ProjectDetails() {
           
           <div className={wideImages ? 'lg:col-span-3' : 'lg:col-span-1'}>
             <div className="sticky top-24 bg-bg-light rounded-xl p-8 border border-border-light">
-              <h3 className="text-[13px] uppercase tracking-wider font-medium mb-6 text-text-dark">Key Details</h3>
-              <ul className="space-y-4 text-[14px] text-text-grey">
+              <h3 className="text-[15px] uppercase tracking-wider font-medium mb-6 text-text-dark">Key Details</h3>
+              <ul className="space-y-4 text-[16px] text-text-grey">
                 {project.details.map((detail, idx) => (
                   <li key={idx} className="flex gap-3">
                     <span className="text-text-dark opacity-30">0{idx + 1}</span>
@@ -236,20 +236,20 @@ export default function ProjectDetails() {
       </main>
       
       <footer className="bg-bg-light px-8 py-12 md:px-16 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-8 border-t border-border-light">
-        <div className="font-serif text-[24px]">Let's work together.</div>
+        <div className="font-serif text-[27px]">Let's work together.</div>
         <div className="flex flex-wrap items-center gap-4">
           <a 
             href="https://www.linkedin.com/in/lomitha" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-text-dark text-bg-light border border-border-light px-6 py-3 rounded-xl text-[14px] hover:opacity-90 transition-opacity"
+            className="bg-text-dark text-bg-light border border-border-light px-6 py-3 rounded-xl text-[16px] hover:opacity-90 transition-opacity"
           >
             LinkedIn
           </a>
           <a 
             href={`${import.meta.env.BASE_URL}Lomitha_Wickramarachchi_CV.pdf`} 
             download="Lomitha_Wickramarachchi_CV.pdf"
-            className="bg-text-dark text-bg-light px-6 py-3 rounded-xl text-[14px] hover:opacity-90 transition-opacity"
+            className="bg-text-dark text-bg-light px-6 py-3 rounded-xl text-[16px] hover:opacity-90 transition-opacity"
           >
             Download CV
           </a>
