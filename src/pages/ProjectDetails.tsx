@@ -247,8 +247,8 @@ export default function ProjectDetails() {
             LinkedIn
           </a>
           <a 
-            href={`${import.meta.env.BASE_URL}Lomitha_Wickramarachchi_CV.pdf`} 
-            download="Lomitha_Wickramarachchi_CV.pdf"
+            href={`${import.meta.env.BASE_URL}Lomitha%20Wickramarachchi%20CV.pdf`} 
+            download="Lomitha Wickramarachchi CV.pdf"
             className="bg-text-dark text-bg-light px-6 py-3 rounded-xl text-[16px] hover:opacity-90 transition-opacity"
           >
             Download CV
