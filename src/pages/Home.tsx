@@ -125,7 +125,7 @@ export default function Home() {
               </div>
               <h3 className="font-serif text-[28px] mb-4 group-hover:text-accent-blue-text transition-colors">Native PSCAD Model of a FIMER Central Solar Inverter</h3>
               <p className="text-[16px] text-text-grey leading-relaxed mb-8">
-                FIMER's inverter control only runs in PSCAD as a sealed, compiled DLL. I led the team's work to replace it with a fully native PSCAD and Fortran model that drops into FIMER's own test case and reproduces their results through faults, voltage swells, phase jumps and frequency events.
+                FIMER's inverter control only runs in PSCAD as a sealed, compiled DLL. I rebuilt it as a fully native PSCAD and Fortran model that drops into FIMER's own test case and reproduces their results through faults, voltage swells, phase jumps and frequency events.
               </p>
               <div className="flex flex-wrap gap-2">
                 {['PSCAD/EMTDC', 'Fortran', 'MATLAB/Simulink', 'Python', 'Fault ride-through', 'Grid connection', 'Model validation'].map(tag => (
